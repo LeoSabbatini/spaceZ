@@ -1,15 +1,34 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, SafeAreaView, ScrollView, StatusBar } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  TouchableOpacity,
+} from 'react-native';
 
 import dias from "../../assets/images/dias.png";
 import tamanho from "../../assets/images/tamanho.png";
 import temperatura from "../../assets/images/temperatura.png";
+import voltar from "../../assets/images/voltar.png";
 
-export default function PlanetCard() {
+export default function PlanetCard({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="light-content"  />
+      <StatusBar barStyle="light-content" />
       <ScrollView contentContainerStyle={styles.scrollContainer} bounces={false}>
+        
+        <TouchableOpacity 
+          style={styles.backButton} 
+          onPress={() => navigation?.goBack()}
+          activeOpacity={0.7}
+        >
+          <Image source={voltar} style={styles.backIcon} />
+        </TouchableOpacity>
+
         <View style={styles.imageContainer}>
           <Text style={styles.bgNumber}>1</Text>
           <Image
@@ -31,7 +50,6 @@ export default function PlanetCard() {
             conhecidas nem anéis.
           </Text>
 
-          {/* Rodapé com as métricas */}
           <View style={styles.metricsRow}>
             <View style={styles.metricItem}>
               <Image source={tamanho} style={styles.icon} />
@@ -74,16 +92,28 @@ const styles = StyleSheet.create({
   bgNumber: {
     position: 'absolute',
     left: 0,
-    top: 130,
+    top: 10,
     fontSize: 280,
     fontWeight: 'bold',
     color: '#D8D8D8',
     zIndex: 1,
   },
+  backButton: {
+    alignSelf: 'flex-start',
+    paddingVertical: 8,
+    paddingRight: 16,
+    zIndex: 10,
+  },
+  backIcon: {
+    width: 28,
+    height: 28,
+    resizeMode: 'contain',
+    tintColor: '#FFFFFF', 
+  },
   planetImage: {
     position: 'absolute',
     right: -150,
-    top: -20,
+    top: -130,
     width: 460,
     height: 460,
     zIndex: 2,
