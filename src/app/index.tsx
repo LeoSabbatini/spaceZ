@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, Pressable, ImageBackground } from "react-native";
+import { Text, View, StyleSheet, Pressable, ImageBackground, Image } from "react-native";
 import { useRouter } from "expo-router";
 
 
@@ -8,6 +8,10 @@ export default function Index() {
   return (
     <ImageBackground  style={styles.background} resizeMode="cover">
       <View style={styles.container}>
+        <Image 
+          source={require('../../assets/images/logotipo.png')}
+          style={styles.logotipo}
+        />
         <Text style={styles.title}>SpaceZ</Text>
         <Text style={styles.subtitle}>
           Uma plataforma educativa e interativa concebida para ensinar os mais
@@ -32,6 +36,11 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     backgroundColor: "#000"
+  },
+  logotipo: {
+    height: 400,
+    width: 350,
+    marginBottom: 50,
   },
   container: {
     flex: 1,
