@@ -1,17 +1,7 @@
 import { BuscarPlaneta } from "@/api/getPlaneta";
 import { useQuery } from "@tanstack/react-query";
 import { Link, useLocalSearchParams } from "expo-router";
-
-import {
-  ActivityIndicator,
-  Image,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import {ActivityIndicator,Image,ScrollView,StatusBar,StyleSheet,Text,TouchableOpacity,View,} from "react-native";
 
 import dias from "../../../assets/images/dias.png";
 import tamanho from "../../../assets/images/tamanho.png";
@@ -28,7 +18,7 @@ export default function PlanetCard() {
 
   if (isLoading) {
     return (
-      <View /*style={styles.centro}*/>
+      <View>
         <ActivityIndicator />
         <Text>Carregando planeta...</Text>
       </View>
@@ -130,10 +120,10 @@ const styles = StyleSheet.create({
   },
   planetImage: {
     position: "absolute",
-    right: -150,
-    top: -130,
-    width: 460,
-    height: 460,
+    right: -420,
+    top: -350,
+    width: 1100,
+    height: 760,
     zIndex: 2,
   },
   contentContainer: {

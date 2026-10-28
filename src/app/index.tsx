@@ -17,7 +17,7 @@ export default function Index() {
         </Text>
 
         <View style={styles.buttonContainer}>
-          <Pressable style={styles.button} onPress={() => router.push("/catalogo")}>
+          <Pressable style={styles.button} onPress={() => router.push("/planetas")}>
           <Text style={styles.buttonText}>Começar</Text>
           <Text style={styles.arrowIcon}>→</Text>
         </Pressable>
