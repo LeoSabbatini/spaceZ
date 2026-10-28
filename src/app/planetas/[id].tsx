@@ -40,15 +40,15 @@ export default function PlanetCard() {
         bounces={false}
       >
         <Link href={"/planetas"}>
-          <TouchableOpacity style={styles.backButton} activeOpacity={0.7}>
-            <Image source={voltar} style={styles.backIcon} />
+          <TouchableOpacity style={styles.button} activeOpacity={0.7}>
+            <Image source={voltar} style={styles.voltar} />
           </TouchableOpacity>
         </Link>
         <View style={styles.imageContainer}>
-          <Text style={styles.bgNumber}>{data.id}</Text>
+          <Text style={styles.numero}>{data.id}</Text>
           <Image
             source={{uri:data.imgUrl}}
-            style={styles.planetImage}
+            style={styles.planetaImage}
             resizeMode="contain"
           />
         </View>
@@ -56,22 +56,22 @@ export default function PlanetCard() {
         <View style={styles.contentContainer}>
           <Text style={styles.title}>{data.nome}</Text>
 
-          <Text style={styles.description}>{data.descricao}</Text>
+          <Text style={styles.descricao}>{data.descricao}</Text>
 
-          <View style={styles.metricsRow}>
-            <View style={styles.metricItem}>
+          <View style={styles.dados}>
+            <View style={styles.opcao}>
               <Image source={tamanho} style={styles.icon} />
-              <Text style={styles.metricText}>{data.tamanho} km</Text>
+              <Text style={styles.opcaoText}>{data.tamanho} km</Text>
             </View>
 
-            <View style={styles.metricItem}>
+            <View style={styles.opcao}>
               <Image source={temperatura} style={styles.icon} />
-              <Text style={styles.metricText}>{data.temperatura}° C</Text>
+              <Text style={styles.opcaoText}>{data.temperatura}° C</Text>
             </View>
 
-            <View style={styles.metricItem}>
+            <View style={styles.opcao}>
               <Image source={dias} style={styles.icon} />
-              <Text style={styles.metricText}>{data.duracaoAno} dias</Text>
+              <Text style={styles.opcaoText}>{data.duracaoAno} dias</Text>
             </View>
           </View>
         </View>
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     position: "relative",
     justifyContent: "center",
   },
-  bgNumber: {
+  numero: {
     position: "absolute",
     left: 0,
     top: 10,
@@ -106,19 +106,19 @@ const styles = StyleSheet.create({
     color: "#D8D8D8",
     zIndex: 1,
   },
-  backButton: {
+  button: {
     alignSelf: "flex-start",
     paddingVertical: 8,
     paddingRight: 16,
     zIndex: 10,
   },
-  backIcon: {
+  voltar: {
     width: 28,
     height: 28,
     resizeMode: "contain",
     tintColor: "#FFFFFF",
   },
-  planetImage: {
+  planetaImage: {
     position: "absolute",
     right: -420,
     top: -350,
@@ -136,19 +136,19 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     letterSpacing: 0.5,
   },
-  description: {
+  descricao: {
     color: "#D0D0D0",
     fontSize: 15,
     lineHeight: 24,
     fontWeight: "300",
     marginBottom: 36,
   },
-  metricsRow: {
+  dados: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
   },
-  metricItem: {
+  opcao: {
     flexDirection: "row",
     alignItems: "center",
     gap: 8,
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
     tintColor: "#FFFFFF",
   },
-  metricText: {
+  opcaoText: {
     color: "#FFFFFF",
     fontSize: 14,
     fontWeight: "bold",

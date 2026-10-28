@@ -15,7 +15,7 @@ export default function Catalogo() {
     return (
       <View style={styles.centro}>
         <ActivityIndicator color="#FFFFFF" size="large" />
-        <Text style={styles.loadingText}>Explorando planetas...</Text>
+        <Text style={styles.carregando}>Explorando planetas...</Text>
       </View>
     );
   }
@@ -23,7 +23,7 @@ export default function Catalogo() {
   if (isError) {
     return (
       <View style={styles.centro}>
-        <Text style={styles.loadingText}>Ops! Erro ao carregar planetas</Text>
+        <Text style={styles.carregando}>Ops! Erro ao carregar planetas</Text>
       </View>
     );
   }
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  loadingText: {
+  carregando: {
     color: "#FFFFFF",
     marginTop: 10,
   },

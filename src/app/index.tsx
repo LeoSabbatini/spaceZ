@@ -1,13 +1,12 @@
 import { Text, View, StyleSheet, Pressable, ImageBackground } from "react-native";
 import { useRouter } from "expo-router";
-import fundo from "../../assets/images/fundo.png";
 
 
 export default function Index() {
   const router = useRouter();
 
   return (
-    <ImageBackground source={fundo} style={styles.background} resizeMode="cover">
+    <ImageBackground  style={styles.background} resizeMode="cover">
       <View style={styles.container}>
         <Text style={styles.title}>SpaceZ</Text>
         <Text style={styles.subtitle}>
@@ -19,7 +18,7 @@ export default function Index() {
         <View style={styles.buttonContainer}>
           <Pressable style={styles.button} onPress={() => router.push("/planetas")}>
           <Text style={styles.buttonText}>Começar</Text>
-          <Text style={styles.arrowIcon}>→</Text>
+          <Text style={styles.seta}>→</Text>
         </Pressable>
         </View>
       </View>
@@ -32,6 +31,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
     height: "100%",
+    backgroundColor: "#000"
   },
   container: {
     flex: 1,
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "600",
   },
-  arrowIcon: {
+  seta: {
     color: "#000000",
     fontSize: 18,
     marginLeft: 8,
